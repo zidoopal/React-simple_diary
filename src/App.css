@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbit&display=swap');
+
+* {
+  font-family: 'Orbit', sans-serif;
+  color: rgb(65, 65, 65);
+}
+
+.DiaryEditor {
+  border: 1px solid #e1e1e1;
+  text-align: center;
+  padding: 20px;
+}
+
+.DiaryEditor input,
+.DiaryEditor textarea {
+  margin-bottom: 20px;
+  width: 500px;
+  padding: 10px;
+  border: 1px solid #e1e1e1;
+}
+
+.DiaryEditor textarea {
+  height: 150px;
+}
+
+.DiaryEditor select {
+  width: 80px;
+  margin-bottom: 20px;
+  padding: 5px;
+}
+
+button {
+  width: 100px;
+  border-radius: 20px;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+button:hover {
+  background-color: tomato;
+}
