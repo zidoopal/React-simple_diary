@@ -1,3 +1,5 @@
+import DiaryItem from './DiaryItem';
+
 const DiaryList = ({ diaryList }) => {
   console.log(diaryList);
   return (
@@ -5,14 +7,9 @@ const DiaryList = ({ diaryList }) => {
       <h2>일기 리스트</h2>
       <h4>{diaryList.length}개의 일기가 작성되었어요 :) </h4>
       <div>
-        {/* 만약 key값이 없을 경우 map의 2번째 인자로 idx 넣어주기 -차선 */}
+        {/* 만약 key값이 없을 경우 map의 2번째 인자로 idx 넣어주기 */}
         {diaryList.map((it) => (
-          <div key={it.id}>
-            <div>작성자: {it.author}</div>
-            <div>내용: {it.content}</div>
-            <div>기분: {it.emotion}</div>
-            <div>날짜: {it.created_date}</div>
-          </div>
+          <DiaryItem key={it.id} {...it} />
         ))}
       </div>
     </div>
