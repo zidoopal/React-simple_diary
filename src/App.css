@@ -6,9 +6,9 @@
 }
 
 .DiaryEditor {
-  border: 1px solid #e1e1e1;
   text-align: center;
   padding: 20px;
+  border: 1px solid #e1e1e1;
 }
 
 .DiaryEditor input,
@@ -21,6 +21,10 @@
 
 .DiaryEditor textarea {
   height: 150px;
+}
+
+::placeholder {
+  color: #e1e1e1;
 }
 
 .DiaryEditor select {
