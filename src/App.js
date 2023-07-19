@@ -21,7 +21,7 @@ const dummyList = [
   {
     id: 3,
     author: '지둡할',
-    content: '공부 열심히하자 :)',
+    content: '이제 제발 정신 좀 차려...',
     emotion: '😭',
     created_date: new Date().getTime(),
   },
