@@ -1,3 +1,4 @@
+/* fonts */
 @import url('https://fonts.googleapis.com/css2?family=Orbit&display=swap');
 
 * {
@@ -5,26 +6,30 @@
   color: rgb(65, 65, 65);
 }
 
+/* variables */
+:root {
+  --light-gray: #e1e1e1;
+  --main-border: 1px solid var(--light-gray);
+}
+
+/* Diary */
 .DiaryEditor {
   text-align: center;
-  padding: 20px;
-  border: 1px solid #e1e1e1;
+  margin: 20px;
+  padding: 30px;
+  border: var(--main-border);
 }
 
 .DiaryEditor input,
 .DiaryEditor textarea {
   margin-bottom: 20px;
-  width: 500px;
+  width: 600px;
   padding: 10px;
-  border: 1px solid #e1e1e1;
+  border: var(--main-border);
 }
 
 .DiaryEditor textarea {
-  height: 150px;
-}
-
-::placeholder {
-  color: #e1e1e1;
+  height: 200px;
 }
 
 .DiaryEditor select {
@@ -33,17 +38,56 @@
   padding: 5px;
 }
 
+::placeholder {
+  color: var(--light-gray);
+}
+
 button {
-  width: 100px;
-  border-radius: 20px;
-  padding: 10px;
-  margin-bottom: 20px;
-  border: none;
   font-weight: bold;
+  width: 100px;
+  border: none;
+  border-radius: 20px;
+  margin-bottom: 20px;
+  padding: 10px;
   cursor: pointer;
-  transition: background-color 0.3s ease-in-out;
+  transition: background-color 0.2s ease-in-out;
 }
 
 button:hover {
   background-color: tomato;
+}
+
+/* List  */
+.DiaryList {
+  margin: 20px;
+  padding: 30px;
+  border: var(--main-border);
+}
+
+.DiaryList h2 {
+  text-align: center;
+}
+
+/* Item  */
+.DiaryItem {
+  background-color: rgba(240, 240, 240, 0.7);
+  margin-bottom: 20px;
+  padding: 20px;
+}
+
+.DiaryItem .info {
+  border-bottom: var(--main-border);
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+}
+
+.DiaryItem .date {
+  font-size: 14px;
+  color: #aaaaaa;
+}
+
+.DiaryItem .content {
+  font-weight: bold;
+  margin-top: 30px;
+  margin-bottom: 30px;
 }
