@@ -53,7 +53,6 @@ const DiaryEditor = () => {
           ref={contentInput}
           placeholder="오늘의 일들을 적어보세요 :)"
           name="content"
-          value={state.content}
           onChange={handleChangeState}
         />
       </div>
@@ -69,7 +68,7 @@ const DiaryEditor = () => {
           <option value={3}>😶</option>
           <option value={4}>🤩</option>
           <option value={5}>🤢</option>
-          <option value={5}>😡</option>
+          <option value={6}>😡</option>
         </select>
       </div>
       <div>
