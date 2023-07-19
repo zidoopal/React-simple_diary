@@ -1,15 +1,15 @@
 import React, { useRef, useState } from 'react';
 
-const DiaryEditor = () => {
-  // DOM 요소를 선택하는 useRef (react에서 DOM 조작하기)
-  const authorInput = useRef();
-  const contentInput = useRef();
-
+const DiaryEditor = ({ onCreate }) => {
   const [state, setState] = useState({
     author: '',
     content: '',
-    emotion: 1,
+    emotion: '',
   });
+
+  // DOM 요소를 선택하는 useRef (react에서 DOM 조작하기)
+  const authorInput = useRef();
+  const contentInput = useRef();
 
   const handleChangeState = (e) => {
     setState({
@@ -21,19 +21,25 @@ const DiaryEditor = () => {
   const handleSubmit = () => {
     if (state.author.length < 1) {
       // alert('작성자명은 최소 1글자 이상 입력해주세요');
-      // focus
+      // 작성자 input focus
       // alert 대신 focus 효과로 대신해보기
       authorInput.current.focus();
       return;
     }
 
     if (state.content.length < 5) {
-      // focus
       contentInput.current.focus();
       return;
     }
-
+    //props로 받은 onCreate를 호출
+    onCreate(state.author, state.content, state.emotion);
     alert('저장 성공 :)');
+    // 저장 후 작성 폼 데이터 초기값으로
+    setState({
+      author: '',
+      content: '',
+      emotion: '',
+    });
   };
 
   return (
