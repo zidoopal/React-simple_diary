@@ -1,6 +1,6 @@
 import DiaryItem from './DiaryItem';
 
-const DiaryList = ({ diaryList }) => {
+const DiaryList = ({ onDelete, diaryList }) => {
   console.log(diaryList);
   return (
     <div className="DiaryList">
@@ -9,7 +9,8 @@ const DiaryList = ({ diaryList }) => {
       <div>
         {/* 만약 key값이 없을 경우 map의 2번째 인자로 idx 넣어주기 */}
         {diaryList.map((it) => (
-          <DiaryItem key={it.id} {...it} />
+          // 자기의 자식인 D.E.에게 key와 onDelete 내려주기
+          <DiaryItem key={it.id} {...it} onDelete={onDelete} />
         ))}
       </div>
     </div>
