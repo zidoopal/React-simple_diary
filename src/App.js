@@ -27,10 +27,26 @@ function App() {
     setData([newItem, ...data]); // newItem이 먼저 최상단으로 > 그 다음 기존 데이터
   };
 
+  // 일기 삭제
+  // App 컴포넌트에서 직접 onDelete함수 호출하는 것 아니므로,
+  // 어떤 id를 갖고있는 요소를 지우기를 원하는 지 매개변수로 전달받게 설정
+  const onDelete = (targetId) => {
+    //👉 onDelete 함수 어디서 호출해야 함?? (D.I. 배열 요소의 id를 onDelete 에다 전달해줘야됨)
+    // == D.I. 이 onDelete 함수를 호출할 수 있어야 함 == D.I.의 부모인 D.L.에 props로 onDelete함수 내려주자.
+    console.log(`id: ${targetId} 글이 삭제되었습니다.`);
+
+    // 지워진 아이템의 배열 요소를 제외한 새로운 배열을 만들어서
+    // setData(상태변화함수)에 전달해서 데이터 배열 바꿔주자
+    const newDiaryItemList = data.filter((it) => it.id !== targetId);
+    console.log(newDiaryItemList);
+    setData(newDiaryItemList); // 삭제완료 XD
+  };
+
   return (
     <div className="App">
       <DiaryEditor onCreate={onCreate} />
-      <DiaryList diaryList={data} />
+      {/* D.I.의 부모 > D.L.에 props로 onDelete함수 내려주기  */}
+      <DiaryList onDelete={onDelete} diaryList={data} />
     </div>
   );
 }
