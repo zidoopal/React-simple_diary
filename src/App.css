@@ -12,7 +12,24 @@
   --main-border: 1px solid var(--light-gray);
 }
 
-/* Diary */
+/* Component */
+button {
+  font-weight: bold;
+  width: 100px;
+  border: none;
+  border-radius: 20px;
+  /* margin-bottom: 20px; */
+  padding: 10px;
+  cursor: pointer;
+  background-color: turquoise;
+  transition: background-color 0.3s ease-in-out;
+}
+
+button:hover {
+  background-color: rgb(5, 199, 179);
+}
+
+/* Editor */
 .DiaryEditor {
   text-align: center;
   margin: 20px;
@@ -40,21 +57,6 @@
 
 ::placeholder {
   color: var(--light-gray);
-}
-
-button {
-  font-weight: bold;
-  width: 100px;
-  border: none;
-  border-radius: 20px;
-  margin-bottom: 20px;
-  padding: 10px;
-  cursor: pointer;
-  transition: background-color 0.2s ease-in-out;
-}
-
-button:hover {
-  background-color: tomato;
 }
 
 /* List  */
