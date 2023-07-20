@@ -10,6 +10,7 @@ const DiaryEditor = ({ onCreate }) => {
   // DOM 요소를 선택하는 useRef (react에서 DOM 조작하기)
   const authorInput = useRef();
   const contentInput = useRef();
+  const emotionInput = useRef();
 
   const handleChangeState = (e) => {
     setState({
@@ -31,6 +32,12 @@ const DiaryEditor = ({ onCreate }) => {
       contentInput.current.focus();
       return;
     }
+
+    if (state.emotion.length < 1) {
+      emotionInput.current.focus();
+      return;
+    }
+
     //props로 받은 onCreate를 호출
     onCreate(state.author, state.content, state.emotion);
     alert('저장 성공 :)');
@@ -48,7 +55,7 @@ const DiaryEditor = ({ onCreate }) => {
       <div>
         <input
           ref={authorInput}
-          placeholder="작성자명을 입력해주세요"
+          placeholder="작성자명을 입력해주세요."
           name="author"
           value={state.author}
           onChange={handleChangeState}
@@ -59,22 +66,25 @@ const DiaryEditor = ({ onCreate }) => {
           ref={contentInput}
           placeholder="오늘의 일들을 적어보세요 :)"
           name="content"
+          value={state.content}
           onChange={handleChangeState}
         />
       </div>
       <div>
         <span>오늘의 기분: </span>
         <select
+          ref={emotionInput}
           name="emotion"
           value={state.emotion}
           onChange={handleChangeState}
         >
-          <option value={1}>😊</option>
-          <option value={2}>😭</option>
-          <option value={3}>😶</option>
-          <option value={4}>🤩</option>
-          <option value={5}>🤢</option>
-          <option value={6}>😡</option>
+          <option value={''}>--</option>
+          <option value={'😊'}>😊</option>
+          <option value={'😭'}>😭</option>
+          <option value={'😶'}>😶</option>
+          <option value={'🤩'}>🤩</option>
+          <option value={'🤢'}>🤢</option>
+          <option value={'😡'}>😡</option>
         </select>
       </div>
       <div>
